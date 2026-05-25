@@ -1,13 +1,12 @@
-把照片放在这个文件夹。
+把照片上传到这个文件夹。
 
-例如：
-- photo1.jpg
-- photo2.jpg
-- photo3.jpg
+建议文件名：
 
-然后到 assets/js/content.js 里修改相册列表：
+photo1.jpg
+travel1.jpg
+proposal1.jpg
+daily1.jpg
+food1.jpg
+future1.jpg
 
-{
-  title: "照片标题",
-  src: "uploads/album/你的照片名.jpg"
-}
+然后到 assets/js/content.js 里修改相册对应的 src。
