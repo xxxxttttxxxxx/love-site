@@ -4,9 +4,6 @@
 
 ## 当前账号
 
-- 账号：chenyifeng
-- 密码：chenyifeng
-
 上线后建议换复杂密码：打开 `tools/password.html` 生成 SHA-256，再改 `assets/js/config.js`。
 
 ## 常改文件
