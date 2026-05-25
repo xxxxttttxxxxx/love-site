@@ -24,6 +24,6 @@ const SITE_USERS = [
     username: "chenyifeng",
     displayName: "陈一峰",
     role: "admin",
-    passwordHash: "b4cf8af27c87226cfbbb811d5d69e29e54e85d153aeb83625e685832df6c2006"
+    passwordHash: "c06e7f4fd1e89c15bda2aeed5ab8f4d5ced6a05f3aa32f328bcc7a3d772b2ec5"
   }
 ];
