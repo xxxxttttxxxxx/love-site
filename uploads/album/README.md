@@ -2,11 +2,12 @@
 
 建议文件名：
 
-photo1.jpg
-travel1.jpg
-proposal1.jpg
-daily1.jpg
-food1.jpg
-future1.jpg
+- daily1.jpg
+- travel1.jpg
+- proposal1.jpg
+- wedding1.jpg
+- hongkong1.jpg
 
-然后到 assets/js/content.js 里修改相册对应的 src。
+然后到 assets/js/content.js 里修改相册：
+
+{ title: "照片标题", src: "uploads/album/daily1.jpg" }

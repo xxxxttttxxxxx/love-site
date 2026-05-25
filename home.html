@@ -6,124 +6,147 @@
   <title>love you thousand years</title>
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
-<body>
+<body class="site-page">
+  <div class="noise"></div>
   <header class="topbar">
-    <a class="logo" href="#home">♡ <span id="siteName"></span></a>
-    <nav>
+    <a class="logo" href="#top"><span>♥</span><b id="siteName">love you thousand years</b></a>
+    <nav class="nav">
       <a href="#story">故事</a>
-      <a href="#dates">纪念日</a>
+      <a href="#calendar">日历</a>
       <a href="#album">相册</a>
       <a href="#diary">日记</a>
       <a href="#wishes">愿望</a>
-      <a href="#message">留言</a>
-      <a id="privateLink" href="#private">私密</a>
-      <button id="logoutBtn" class="ghost">退出</button>
+      <a href="#letter">信</a>
+      <a href="#messages">留言</a>
+      <a href="#private">私密</a>
+      <button id="logoutBtn" class="ghost-btn">退出</button>
     </nav>
   </header>
 
-  <main>
-    <section id="home" class="hero">
+  <main id="top">
+    <section class="hero-section section-pad">
       <div class="hero-copy">
-        <p class="eyebrow" id="anniversaryText"></p>
+        <p id="anniversaryText" class="eyebrow"></p>
         <h1 id="heroTitle"></h1>
         <p id="heroSubtitle" class="hero-subtitle"></p>
-        <div class="hero-quote" id="heroQuote"></div>
         <div class="hero-actions">
-          <a class="button" href="#story">看我们的故事</a>
-          <a class="button secondary" href="#private">看悄悄话</a>
+          <a class="primary-btn" href="#calendar">看我们的日历</a>
+          <a class="secondary-btn" href="#album">放进照片</a>
         </div>
       </div>
-      <div class="hero-side">
-        <div class="count-card">
-          <span>距离专属纪念日已过去</span>
-          <strong id="daysTogether">0</strong>
-          <span>天</span>
+
+      <aside class="hero-dashboard luxury-card">
+        <p id="dayCardTitle" class="dashboard-label"></p>
+        <div id="daysTogether" class="huge-number">0</div>
+        <p class="dashboard-unit">天</p>
+        <div class="divider"></div>
+        <p id="heroQuote" class="quote"></p>
+        <p id="dailyPassword" class="daily-line"></p>
+      </aside>
+    </section>
+
+    <section class="ticker-wrap">
+      <div id="ticker" class="ticker"></div>
+    </section>
+
+    <section class="section-pad stats-grid" id="overview"></section>
+
+    <section id="calendar" class="section-pad two-col reverse-on-mobile">
+      <div class="section-title sticky-title">
+        <p class="eyebrow">LOVE CALENDAR</p>
+        <h2>我们的动态日历</h2>
+        <p>每个重要日期都会在日历里亮起来。以后你要加纪念日，只改 <code>assets/js/content.js</code> 里的 events。</p>
+        <div id="eventList" class="event-list"></div>
+      </div>
+      <div class="calendar-card luxury-card">
+        <div class="calendar-head">
+          <button id="prevMonth" class="icon-btn">‹</button>
+          <div>
+            <h3 id="calendarTitle"></h3>
+            <p id="calendarHint"></p>
+          </div>
+          <button id="nextMonth" class="icon-btn">›</button>
         </div>
-        <div class="mini-card">
-          <span>今日暗号</span>
-          <strong id="dailyPassword"></strong>
+        <div class="weekday-row">
+          <span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span><span>日</span>
         </div>
+        <div id="calendarGrid" class="calendar-grid"></div>
       </div>
     </section>
 
-    <section id="story" class="section">
-      <div class="section-title">
-        <p>Story Line</p>
-        <h2>我们的故事</h2>
-        <span>从第一次认识，到把日子写成只属于你们的长诗。</span>
+    <section id="story" class="section-pad">
+      <div class="section-title center-title">
+        <p class="eyebrow">OUR STORY</p>
+        <h2>从第一次认识，到后来的每一步</h2>
+        <p>时间会往前走，但这些节点会一直停在这里，提醒我们曾经多认真地靠近彼此。</p>
       </div>
-      <div id="storyList" class="timeline"></div>
+      <div id="storyTimeline" class="timeline"></div>
     </section>
 
-    <section id="dates" class="section soft-section">
-      <div class="section-title">
-        <p>Special Days</p>
-        <h2>重要日期</h2>
-        <span>每一个日期都不是普通数字，是你们一起走过的坐标。</span>
+    <section id="album" class="section-pad">
+      <div class="section-title split-title">
+        <div>
+          <p class="eyebrow">PHOTO WALL</p>
+          <h2>相册墙</h2>
+        </div>
+        <p>你后面把照片放到 <code>uploads/album/</code>，再把文件名写进 content.js，就会显示在这里。</p>
       </div>
-      <div id="dateGrid" class="date-grid"></div>
+      <div id="albumGrid" class="album-grid"></div>
     </section>
 
-    <section id="album" class="section">
-      <div class="section-title">
-        <p>Album</p>
-        <h2>我们的相册</h2>
-        <span>照片可以慢慢换，回忆会越来越满。</span>
-      </div>
-      <div id="albumGrid" class="grid"></div>
-    </section>
-
-    <section id="diary" class="section soft-section">
-      <div class="section-title">
-        <p>Diary</p>
+    <section id="diary" class="section-pad two-col">
+      <div class="section-title sticky-title">
+        <p class="eyebrow">DIARY</p>
         <h2>生活日记</h2>
-        <span>把一句想念、一点小事、一段日常，都认真收藏。</span>
+        <p>不一定每天都写，但每次写下来的时候，都是把今天悄悄留住。</p>
       </div>
-      <div id="diaryList" class="cards"></div>
+      <div id="diaryList" class="diary-list"></div>
     </section>
 
-    <section id="wishes" class="section">
-      <div class="section-title">
-        <p>Wish List</p>
-        <h2>以后想一起完成的事</h2>
-        <span>不是宏大的愿望，是两个人愿意一起慢慢完成的生活。</span>
+    <section id="wishes" class="section-pad">
+      <div class="section-title center-title">
+        <p class="eyebrow">WISH LIST</p>
+        <h2>想和你一起完成的事</h2>
       </div>
-      <div id="wishList" class="wish-list"></div>
+      <div id="wishGrid" class="wish-grid"></div>
     </section>
 
-    <section id="letter" class="section soft-section">
-      <div class="section-title">
-        <p>Letter</p>
-        <h2>给陈意峰的一封信</h2>
+    <section id="letter" class="section-pad two-col reverse-on-mobile">
+      <div class="letter-card luxury-card">
+        <p class="eyebrow">LETTER</p>
+        <h2 id="letterTitle"></h2>
+        <div id="letterBody" class="letter-body"></div>
       </div>
-      <article id="letterCard" class="letter-card"></article>
+      <div class="polaroid-stack" id="polaroidStack"></div>
     </section>
 
-    <section id="message" class="section">
-      <div class="section-title">
-        <p>Message</p>
+    <section id="messages" class="section-pad two-col">
+      <div class="section-title sticky-title">
+        <p class="eyebrow">MESSAGE WALL</p>
         <h2>留言墙</h2>
-        <span>这里的留言保存在当前浏览器里，适合写临时小纸条。</span>
+        <p>静态网站没有服务器，留言会保存在当前浏览器里。想长期保留，就把重要留言复制到 content.js。</p>
       </div>
-      <div class="message-box">
-        <textarea id="messageInput" rows="4" placeholder="写一句想说的话，比如：今天也很想你。"></textarea>
-        <button id="messageBtn">保存留言</button>
+      <div class="message-card luxury-card">
+        <form id="messageForm" class="message-form">
+          <input id="messageName" placeholder="署名" />
+          <textarea id="messageText" placeholder="写一句今天想留下的话"></textarea>
+          <button class="primary-btn" type="submit">贴到墙上</button>
+        </form>
+        <div id="messageList" class="message-list"></div>
       </div>
-      <div id="messageList" class="cards"></div>
     </section>
 
-    <section id="private" class="section private-section">
-      <div class="section-title">
-        <p>Private</p>
-        <h2>只属于我们的私密空间</h2>
-        <span>这里适合放你们的暗号、约定和只有彼此懂的话。</span>
+    <section id="private" class="section-pad">
+      <div class="private-card luxury-card">
+        <p class="eyebrow">PRIVATE</p>
+        <h2>只有我们才懂的暗号</h2>
+        <p id="privateText"></p>
       </div>
-      <div id="privateContent" class="private-card"></div>
     </section>
   </main>
 
-  <footer>
-    <span id="footerText"></span>
+  <footer class="footer">
+    <p id="footerText"></p>
   </footer>
 
   <script src="./assets/js/config.js"></script>

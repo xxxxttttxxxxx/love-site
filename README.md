@@ -1,70 +1,27 @@
-# love you thousand years
+# love you thousand years - 高级 UI + 动态日历版
 
-这是 GitHub Pages 直接上传版，不用服务器，不用 PHP，不用数据库，不用 npm。
+这是 GitHub Pages 静态网站版本，不需要服务器，不需要 PHP，不需要数据库。
 
-## 当前内容
+## 当前账号
 
-- 网站标题：love you thousand years
-- 名字：徐腾啸 × 陈意峰
-- 纪念日：2026.02.11
-- 风格：温柔粉色系 + 高级奶油风
-- 已加入：故事时间线、重要日期、相册、日记、愿望清单、给陈意峰的一封信、私密空间、留言墙
+- 账号：chenyifeng
+- 密码：chenyifeng
 
-## 登录账号
+上线后建议换复杂密码：打开 `tools/password.html` 生成 SHA-256，再改 `assets/js/config.js`。
 
-账号按你提供的信息配置在：
+## 常改文件
 
-```text
-assets/js/config.js
-```
+- 基础信息、账号：`assets/js/config.js`
+- 文案、故事、日历事件、相册、日记、愿望：`assets/js/content.js`
+- 样式：`assets/css/style.css`
+- 照片：`uploads/album/`
 
-为了安全，README 不直接公开写密码。你如果要改账号密码，也是在 `assets/js/config.js` 里改。
+## 上传照片
 
-## 怎么上传
+1. 把照片上传到 `uploads/album/`
+2. 修改 `assets/js/content.js` 里的 album 数组
+3. 例如：`src: "uploads/album/travel1.jpg"`
 
-解压后，不要上传外层文件夹。进入文件夹里面，选中这些内容上传到 GitHub 仓库根目录：
+## 注意
 
-```text
-assets
-index.html
-home.html
-tools
-uploads
-README.md
-.nojekyll
-CNAME
-```
-
-上传后点 `Commit changes`，等 1 到 3 分钟刷新网站。
-
-## 怎么改内容
-
-改基础信息、账号：
-
-```text
-assets/js/config.js
-```
-
-改故事、日记、相册、愿望、文案：
-
-```text
-assets/js/content.js
-```
-
-改颜色和排版：
-
-```text
-assets/css/style.css
-```
-
-上传照片：
-
-```text
-uploads/album/
-```
-
-然后在 `assets/js/content.js` 里把图片路径改成对应文件名。
-
-## 重要提醒
-
-GitHub Pages 是静态网站，登录只是前端门锁，不是服务器级私密系统。不要上传身份证、银行卡、非常私密照片、真实隐私文件。
+GitHub Pages 是静态网站，登录属于前端门锁，不要放身份证、银行卡、真实住址、非常私密照片等敏感内容。
